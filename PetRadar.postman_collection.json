@@ -1,0 +1,50 @@
+{
+  "info": {
+    "name": "PetRadar",
+    "description": "Colección para probar la API PetRadar (lost-pets / found-pets)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:3000/api" }
+  ],
+  "item": [
+    {
+      "name": "POST /lost-pets - Registrar mascota perdida",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Firulais\",\n  \"species\": \"Perro\",\n  \"breed\": \"Labrador\",\n  \"color\": \"Café\",\n  \"size\": \"Grande\",\n  \"description\": \"Collar rojo, muy amigable\",\n  \"owner_name\": \"Juan Pérez\",\n  \"owner_email\": \"juan@example.com\",\n  \"owner_phone\": \"5512345678\",\n  \"address\": \"Av. Reforma 123\",\n  \"lost_date\": \"2026-07-10T10:00:00Z\",\n  \"lat\": 19.432608,\n  \"lon\": -99.133209\n}"
+        },
+        "url": { "raw": "{{base_url}}/lost-pets", "host": ["{{base_url}}"], "path": ["lost-pets"] }
+      }
+    },
+    {
+      "name": "GET /lost-pets - Listar activas",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{base_url}}/lost-pets", "host": ["{{base_url}}"], "path": ["lost-pets"] }
+      }
+    },
+    {
+      "name": "POST /found-pets - Registrar mascota encontrada (dispara busqueda + correo)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"species\": \"Perro\",\n  \"breed\": \"Labrador\",\n  \"color\": \"Café\",\n  \"size\": \"Grande\",\n  \"description\": \"Encontrado cerca del parque, sin collar\",\n  \"finder_name\": \"Ana López\",\n  \"finder_email\": \"ana@example.com\",\n  \"finder_phone\": \"5598765432\",\n  \"address\": \"Parque Central\",\n  \"found_date\": \"2026-07-13T09:00:00Z\",\n  \"lat\": 19.432700,\n  \"lon\": -99.133100\n}"
+        },
+        "url": { "raw": "{{base_url}}/found-pets", "host": ["{{base_url}}"], "path": ["found-pets"] }
+      }
+    },
+    {
+      "name": "GET /found-pets - Listar",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{base_url}}/found-pets", "host": ["{{base_url}}"], "path": ["found-pets"] }
+      }
+    }
+  ]
+}
