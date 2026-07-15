@@ -15,7 +15,6 @@ export class EmailService {
 
     async sendEmail(options: EmailOptions): Promise<Boolean> {
 
-        // Prueba de trabajo!! -> Bitcoin
         try {
             await this.transporter.sendMail({
                 to: options.to,
