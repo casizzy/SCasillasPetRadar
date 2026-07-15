@@ -96,10 +96,10 @@ proyecto base (`incident-api-612`). Antes de desplegar o subir el repo a
 GitHub, reemplaza `MAILER_PASSWORD`, `APPINSIGHTS_CONNECTION_STRING` y
 `MAPBOX_TOKEN` por credenciales propias, y agrega `.env` a `.gitignore` para
 no publicarlas.
-
+-
 ## Despliegue
 
 El workflow de GitHub Actions (`.github/workflows/build.yaml`) compila,
 construye la imagen Docker y la publica en GHCR (`ghcr.io`) en cada push a
 `main`. Requiere los secrets `DOCKER_USER`, `DOCKER_PASSWORD` y
-`DOCKER_IMAGE_NAME` configurados en el repositorio.
+`DOCKER_IMAGE_NAME` configurados en el repositorio. -
