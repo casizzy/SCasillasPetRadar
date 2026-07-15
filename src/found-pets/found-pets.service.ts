@@ -46,8 +46,11 @@ export class FoundPetsService {
     const saved = await this.foundPetRepository.save(newFoundPet);
 
     await this.cacheService.delete(CACHE_KEY_ALL_FOUND_PETS);
+    this.searchNearbyAndNotify(saved).catch((error) => {
+      logger.error('[FoundPetsService] Error en searchNearbyAndNotify');
+      logger.error(error);
+    });
 
-    await this.searchNearbyAndNotify(saved);
 
     return saved;
   }

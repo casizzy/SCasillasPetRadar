@@ -10,13 +10,17 @@ export class EmailService {
         auth: {
             user: envs.MAILER_EMAIL,
             pass: envs.MAILER_PASSWORD
-        }
+        },
+        connectionTimeout: 10000,
+        greetingTimeout: 10000,
+        socketTimeout: 10000
     });
 
     async sendEmail(options: EmailOptions): Promise<Boolean> {
 
         try {
             await this.transporter.sendMail({
+                from: envs.MAILER_EMAIL,
                 to: options.to,
                 subject: options.subject,
                 html: options.html
