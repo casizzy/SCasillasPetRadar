@@ -11,7 +11,7 @@ import { logger } from 'src/config/logger';
 import { EmailOptions } from 'src/core/interfaces/mail-option.interface';
 const CACHE_KEY_ALL_FOUND_PETS = 'found-pets:all';
 const SEARCH_RADIUS_METERS = 500;
-const NOTIFICATION_EMAIL = 'stellycr@gmail.com';
+const NOTIFICATION_EMAIL = 'stellycrls03@gmail.com';
 
 @Injectable()
 export class FoundPetsService {
