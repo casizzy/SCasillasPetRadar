@@ -102,4 +102,4 @@ no publicarlas.
 El workflow de GitHub Actions (`.github/workflows/build.yaml`) compila,
 construye la imagen Docker y la publica en GHCR (`ghcr.io`) en cada push a
 `main`. Requiere los secrets `DOCKER_USER`, `DOCKER_PASSWORD` y
-`DOCKER_IMAGE_NAME` configurados en el repositorio. -
+`DOCKER_IMAGE_NAME` configurados en el repositorio. sdfs
